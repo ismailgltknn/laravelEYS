@@ -1,0 +1,1 @@
+<img src="{{ asset('logo/images.png')}}" alt="eys" width="100%">
