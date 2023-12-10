@@ -31,7 +31,12 @@ Route::middleware('auth')->group(function () {
 
 //Admin all routes
 Route::middleware('auth')->group(function () {
-    Route::get('/admin/logout', [AdminController::class, 'destroy'])->name('admin.logout');
+    Route::get('/admin/logout', [AdminController::class, 'Destroy'])->name('admin.logout');
+    Route::get('/admin/profile', [AdminController::class, 'Profile'])->name('admin.profile');
+    Route::get('/edit/profile', [AdminController::class, 'EditProfile'])->name('edit.profile');
+    Route::post('/store/profile', [AdminController::class, 'StoreProfile'])->name('store.profile');
+    Route::get('/change/password', [AdminController::class, 'ChangePassword'])->name('change.password');
+    Route::post('/update/password', [AdminController::class, 'UpdatePassword'])->name('update.password');
 });
 
 require __DIR__.'/auth.php';
