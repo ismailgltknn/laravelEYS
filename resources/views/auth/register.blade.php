@@ -1,59 +1,101 @@
-<x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
-        @csrf
+<!doctype html>
+<html lang="en">
 
-        <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('Ad')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+    <head>
+        
+        <meta charset="utf-8" />
+        <title>Kayıt | Envanter Yönetim Sistemi</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Inventory Management System" name="description" />
+        <meta content="Management System" name="author" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="backend/assets/images/favicon.ico">
+
+        <!-- Bootstrap Css -->
+        <link href="backend/assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+        <!-- Icons Css -->
+        <link href="backend/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <!-- App Css-->
+        <link href="backend/assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+        <div class="wrapper-page">
+            <div class="container-fluid p-0">
+                <div class="card">
+                    <div class="card-body">
+    
+                        <div class="text-center mt-4">
+                            <div class="mb-3">
+                                <a href="" class="auth-logo">
+                                    <img src="logo/images.png" height="100%" width="100%" class="mx-auto" alt="">
+                                </a>
+                            </div>
+                        </div>
+    
+                        <h4 class="text-muted text-center font-size-18"><b>Kayıt</b></h4>
+    
+                        <div class="p-3">
+                            <form class="form-horizontal mt-3" method="POST" action="{{ route('register') }}">
+                                @csrf
+                                <div class="form-group mb-3 row">
+                                    <div class="col-12">
+                                        <input class="form-control" name="name" id="name" type="text" placeholder="Ad" required autofocus>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-3 row">
+                                    <div class="col-12">
+                                        <input class="form-control" name="username" id="username" type="text" placeholder="Kullanıcı Adı" required autofocus>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-3 row">
+                                    <div class="col-12">
+                                        <input class="form-control" name="email" id="email" type="email" placeholder="Email" required>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-3 row">
+                                    <div class="col-12">
+                                        <input class="form-control" id="password" name="password" type="password" placeholder="Şifre" required>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-3 row">
+                                    <div class="col-12">
+                                        <input class="form-control" id="password_confirmation" name="password_confirmation" type="password" placeholder="Şifre Tekrar" required>
+                                    </div>
+                                </div>  
+                                <div class="form-group text-center row mt-3 pt-1">
+                                    <div class="col-12">
+                                        <button class="btn btn-primary w-100 waves-effect waves-light" type="submit">Kayıt</button>
+                                    </div>
+                                </div>
+    
+                                <div class="form-group mt-2 mb-0 row">
+                                    <div class="col-12 mt-3 text-center">
+                                        <a href="{{ route('login') }}" class="text-muted">Zaten bir hesabınız var mı?</a>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- end form -->
+                        </div>
+                    </div>
+                    <!-- end cardbody -->
+                </div>
+                <!-- end card -->
+            </div>
+            <!-- end container -->
         </div>
+        <!-- end -->
+        
 
-        <!-- User Name -->
-        <div class="mt-4">
-            <x-input-label for="username" :value="__('Kullanıcı Adı')" />
-            <x-text-input id="username" class="block mt-1 w-full" type="text" name="username" :value="old('username')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('username')" class="mt-2" />
-        </div>
+        <!-- JAVASCRIPT -->
+        <script src="backend/assets/libs/jquery/jquery.min.js"></script>
+        <script src="backend/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="backend/assets/libs/metismenu/metisMenu.min.js"></script>
+        <script src="backend/assets/libs/simplebar/simplebar.min.js"></script>
+        <script src="backend/assets/libs/node-waves/waves.min.js"></script>
 
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
+        <script src="backend/assets/js/app.js"></script>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Şifre')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
-
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Şifre Tekrar')" />
-
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                {{ __('Zaten bir hesabınız var mı?') }}
-            </a>
-
-            <x-primary-button class="ms-4">
-                {{ __('Kayıt ol') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+    </body>
+</html>
