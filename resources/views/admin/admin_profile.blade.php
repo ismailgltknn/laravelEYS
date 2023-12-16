@@ -12,7 +12,7 @@
                             <img class="rounded-circle avatar-xl mx-auto" src="{{ 
                             !empty($adminData->profileImage) 
                             ? url('/files/profileImages/'.$adminData->profileImage)
-                            : url('/files/profileImages/noavatar.png')}}" alt="userAvatar">
+                            : url('/files/noavatar.png')}}" alt="userAvatar">
                         </div>
                         <hr class="text-muted">
                         <div class="d-flex flex-row border border-secondary rounded mx-auto">

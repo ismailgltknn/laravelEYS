@@ -53,7 +53,7 @@
                 <img class="rounded-circle header-profile-user" src="{{ 
                     !empty($userData->profileImage) 
                     ? url('/files/profileImages/'.$userData->profileImage)
-                    : url('/files/profileImages/noavatar.png')}}"
+                    : url('/files/noavatar.png')}}"
                     alt="Header Avatar">
                     <span class="d-none d-xl-inline-block ms-1">{{ $userData->name }}</span>
                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>

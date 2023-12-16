@@ -40,7 +40,7 @@
                                     <img id="showImage" class="rounded avatar-lg mx-auto" src="{{ 
                                         !empty($editData->profileImage) 
                                         ? url('/files/profileImages/'.$editData->profileImage)
-                                        : url('/files/profileImages/noavatar.png')}}" alt="userAvatar">
+                                        : url('/files/noavatar.png')}}" alt="userAvatar">
                                 </div>
                             </div>
                             <input type="submit" class="btn btn-info waves-effect waves-light" value="Güncelle">
