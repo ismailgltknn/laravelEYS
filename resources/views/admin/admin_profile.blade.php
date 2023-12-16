@@ -31,7 +31,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="{{ route('edit.profile')}}" class="btn btn-primary mb-2 waves-effect waves-light">Düzenle</a>
+                <a href="{{ route('edit.profile')}}" class="btn btn-primary mb-2 ms-2 me-2 waves-effect waves-light">Düzenle</a>
                 </div>
             </div>
         </div>

@@ -1,6 +1,5 @@
 @extends('admin.admin_master')
 @section('admin')
-<script src="/backend/assets/libs/jquery/jquery.min.js"></script>
 <div class="page-content">
     <div class="container-fluid">
         <div class="row">
@@ -51,6 +50,7 @@
         </div>
     </div>
 </div>
+@push('script')
 <script type="text/javascript">
         $(document).ready(function () {
             $('#profileImage').change(function (e) { 
@@ -62,4 +62,5 @@
             });
         });
 </script>
+@endpush
 @endsection

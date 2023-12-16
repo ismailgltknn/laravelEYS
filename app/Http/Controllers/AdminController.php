@@ -64,11 +64,11 @@ class AdminController extends Controller
 
     public function UpdatePassword(Request $request): RedirectResponse
     {
-        $validated = $request->validate([
+        $request->validate([
             'oldPass' => 'required',
             'newPass' => [
                 'required',
-                Password::min(8)->mixedCase()->numbers()->symbols()
+                Password::min(8)->mixedCase()->symbols()
             ],
             'newPassConfirm' => 'required|same:newPass',
         ],

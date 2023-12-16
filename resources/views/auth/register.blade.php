@@ -35,7 +35,11 @@
                         </div>
     
                         <h4 class="text-muted text-center font-size-18"><b>Kayıt</b></h4>
-    
+                        @if(count($errors))
+                            @foreach ($errors->all() as $error)
+                                <p class="alert alert-danger alert-dismissible fade show">{{ $error }}</p>
+                            @endforeach
+                        @endif
                         <div class="p-3">
                             <form class="form-horizontal mt-3" method="POST" action="{{ route('register') }}">
                                 @csrf

@@ -33,7 +33,7 @@ return [
     ],
     'boolean' => 'The :attribute field must be true or false.',
     'can' => 'The :attribute field contains an unauthorized value.',
-    'confirmed' => 'The :attribute field confirmation does not match.',
+    'confirmed' => ':attribute onayı eşleşmiyor.',
     'current_password' => 'The password is incorrect.',
     'date' => 'The :attribute field must be a valid date.',
     'date_equals' => 'The :attribute field must be a date equal to :date.',
@@ -48,7 +48,7 @@ return [
     'distinct' => 'The :attribute field has a duplicate value.',
     'doesnt_end_with' => 'The :attribute field must not end with one of the following: :values.',
     'doesnt_start_with' => 'The :attribute field must not start with one of the following: :values.',
-    'email' => 'The :attribute field must be a valid email address.',
+    'email' => ':attribute geçerli değil.',
     'ends_with' => 'The :attribute field must end with one of the following: :values.',
     'enum' => 'The selected :attribute is invalid.',
     'exists' => 'The selected :attribute is invalid.',
@@ -76,7 +76,7 @@ return [
     'ipv4' => 'The :attribute field must be a valid IPv4 address.',
     'ipv6' => 'The :attribute field must be a valid IPv6 address.',
     'json' => 'The :attribute field must be a valid JSON string.',
-    'lowercase' => 'The :attribute field must be lowercase.',
+    'lowercase' => ':attribute alanı küçük harflerden oluşmalıdır.',
     'lt' => [
         'array' => 'The :attribute field must have less than :value items.',
         'file' => 'The :attribute field must be less than :value kilobytes.',
@@ -94,7 +94,7 @@ return [
         'array' => 'The :attribute field must not have more than :max items.',
         'file' => 'The :attribute field must not be greater than :max kilobytes.',
         'numeric' => 'The :attribute field must not be greater than :max.',
-        'string' => 'The :attribute field must not be greater than :max characters.',
+        'string' => ':attribute alanı en fazla :max karakter olmalıdır.',
     ],
     'max_digits' => 'The :attribute field must not have more than :max digits.',
     'mimes' => 'The :attribute field must be a file of type: :values.',
@@ -149,9 +149,9 @@ return [
         'string' => 'The :attribute field must be :size characters.',
     ],
     'starts_with' => 'The :attribute field must start with one of the following: :values.',
-    'string' => 'The :attribute field must be a string.',
+    'string' => ':attribute alanı sadece harf içermelidir.',
     'timezone' => 'The :attribute field must be a valid timezone.',
-    'unique' => 'The :attribute has already been taken.',
+    'unique' => ':attribute zaten mevcut.',
     'uploaded' => 'The :attribute failed to upload.',
     'uppercase' => 'The :attribute field must be uppercase.',
     'url' => 'The :attribute field must be a valid URL.',
@@ -188,6 +188,10 @@ return [
 
     'attributes' => [
         'newPass' => 'Yeni Şifre',
+        'password' => 'Şifre',
+        'name' => 'Ad',
+        'username' => 'Kullanıcı Adı',
+        'email' => 'Email',
     ],
 
 ];
