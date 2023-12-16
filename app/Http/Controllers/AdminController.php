@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rules\Password;
 
 class AdminController extends Controller
 {
@@ -64,9 +65,16 @@ class AdminController extends Controller
     {
         $validated = $request->validate([
             'oldPass' => 'required',
-            'newPass' => 'required',
+            'newPass' => [
+                'required',
+                Password::min(8)->mixedCase()->numbers()->symbols()
+            ],
             'newPassConfirm' => 'required|same:newPass',
-        ]);
+        ],
+        [
+            'newPassConfirm.same' => 'Şifre tekrarı eşleşmiyor.',
+        ]
+        );
 
         $hashedPass = Auth::user()->password;
         if (Hash::check($request->oldPass, $hashedPass)) {
@@ -77,7 +85,7 @@ class AdminController extends Controller
             session()->flash('message', 'Şifreniz başarıyla güncellendi.');
             return redirect()->back();
         }else{
-            session()->flash('message', 'Şifreniz eşleşmiyor. Lütfen tekrar deneyiniz.');
+            session()->flash('message', 'Şifrenizi hatalı girdiniz!');
             return redirect()->back();
         }
     }
