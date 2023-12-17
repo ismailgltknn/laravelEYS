@@ -37,11 +37,15 @@
     @endif 
 </script>
 <!-- JAVASCRIPT END -->
-<!-- App js -->
+<!-- Validate js -->
 <script src="/backend/assets/js/validate.min.js"></script>
 <!-- Axios js -->
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <!-- SweetAlert js -->
 <script src="/backend/assets/js/sweetAlert211.js"></script>
 <script src="/backend/assets/js/sweetAlertMessage.js"></script>
+<!-- Handlebar js -->
+<script src="/backend/assets/js/handlebar.js"></script>
+<!-- Notify js -->
+<script src="/backend/assets/js/notify.min.js"></script>
 @stack('script')

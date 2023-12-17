@@ -5,7 +5,9 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Pos\CategoryController;
 use App\Http\Controllers\Pos\CustomerController;
+use App\Http\Controllers\Pos\DefaultController;
 use App\Http\Controllers\Pos\ProductController;
+use App\Http\Controllers\Pos\PurchaseController;
 use App\Http\Controllers\Pos\SupplierController;
 use App\Http\Controllers\Pos\UnitController;
 
@@ -92,6 +94,18 @@ Route::middleware('auth')->group(function () {
     Route::get('/product/edit/{id}', [ProductController::class, 'ProductEdit'])->name('product.edit');
     Route::post('/product/update', [ProductController::class, 'ProductUpdate'])->name('product.update');
     Route::get('/product/delete/{id}', [ProductController::class, 'ProductDelete'])->name('product.delete');
+});
+
+//Purchase all routes
+Route::middleware('auth')->group(function () {
+    Route::get('/purchase/all', [PurchaseController::class, 'PurchaseAll'])->name('purchase.all');
+    Route::get('/purchase/add', [PurchaseController::class, 'PurchaseAdd'])->name('purchase.add');
+});
+
+//Default all routes
+Route::middleware('auth')->group(function () {
+    Route::get('/get/category/{supplierId}', [DefaultController::class, 'getCategory'])->name('get.category');
+    Route::get('/get/product/{categoryId}', [DefaultController::class, 'getProduct'])->name('get.product');
 });
 
 require __DIR__.'/auth.php';
