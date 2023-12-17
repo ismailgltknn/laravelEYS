@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Pos\CustomerController;
 use App\Http\Controllers\Pos\SupplierController;
+use App\Http\Controllers\Pos\UnitController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,6 +60,16 @@ Route::middleware('auth')->group(function () {
     Route::get('/customer/edit/{id}', [CustomerController::class, 'CustomerEdit'])->name('customer.edit');
     Route::post('/customer/update', [CustomerController::class, 'CustomerUpdate'])->name('customer.update');
     Route::get('/customer/delete/{id}', [CustomerController::class, 'CustomerDelete'])->name('customer.delete');
+});
+
+//Units all routes
+Route::middleware('auth')->group(function () {
+    Route::get('/unit/all', [UnitController::class, 'UnitAll'])->name('unit.all');
+    Route::get('/unit/add', [UnitController::class, 'UnitAdd'])->name('unit.add');
+    Route::post('/unit/store', [UnitController::class, 'UnitStore'])->name('unit.store');
+    Route::get('/unit/edit/{id}', [UnitController::class, 'UnitEdit'])->name('unit.edit');
+    Route::post('/unit/update', [UnitController::class, 'UnitUpdate'])->name('unit.update');
+    Route::get('/unit/delete/{id}', [UnitController::class, 'UnitDelete'])->name('unit.delete');
 });
 
 require __DIR__.'/auth.php';
