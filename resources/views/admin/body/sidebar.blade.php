@@ -36,6 +36,15 @@
                         <li><a href="{{ route('unit.all')}}">Birimler</a></li>
                     </ul>
                 </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="fas fa-list"></i>
+                        <span>Kategori Yönetimi</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('category.all')}}">Kategoriler</a></li>
+                    </ul>
+                </li>
                 <li class="menu-title">Pages</li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">

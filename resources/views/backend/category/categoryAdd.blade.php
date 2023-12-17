@@ -6,17 +6,17 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Birim Ekle</h4>
-                        <form method="POST" id="unitAdd" action="{{ route('unit.store')}}" class="p-3">
+                        <h4 class="card-title">Kategori Ekle</h4>
+                        <form method="POST" id="categoryAdd" action="{{ route('category.store')}}" class="p-3">
                             @csrf
                             <div class="row mb-3">
-                                <label for="unitName" class="col-sm-2 col-form-label">Birim Adı: </label>
+                                <label for="categoryName" class="col-sm-2 col-form-label">Kategori Adı: </label>
                                 <div class="form-group col-sm-10">
-                                    <input name="unitName" id="unitName" required class="form-control" type="text">
+                                    <input name="categoryName" id="categoryName" required class="form-control" type="text">
                                 </div>
                             </div>
                             <div class="mx-auto">
-                                <input type="submit" class="btn btn-info waves-effect waves-light" value="Birim Ekle">
+                                <input type="submit" class="btn btn-info waves-effect waves-light" value="Kategori Ekle">
                             </div>
                         </form>
                     </div>
@@ -28,15 +28,15 @@
 @endsection
 @push('script')
     <script>
-        $('#unitAdd').validate({
+        $('#categoryAdd').validate({
             rules: {
-                unitName: {
+                categoryName: {
                     required : true,
                 },
             },
             messages :{
-                unitName: {
-                    required : 'Lütfen Birim Adı Giriniz.',
+                categoryName: {
+                    required : 'Lütfen Kategori Adı Giriniz.',
                 },
             },
             errorElement : 'span', 

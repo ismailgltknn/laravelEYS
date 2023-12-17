@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Pos\CategoryController;
 use App\Http\Controllers\Pos\CustomerController;
 use App\Http\Controllers\Pos\SupplierController;
 use App\Http\Controllers\Pos\UnitController;
@@ -70,6 +71,16 @@ Route::middleware('auth')->group(function () {
     Route::get('/unit/edit/{id}', [UnitController::class, 'UnitEdit'])->name('unit.edit');
     Route::post('/unit/update', [UnitController::class, 'UnitUpdate'])->name('unit.update');
     Route::get('/unit/delete/{id}', [UnitController::class, 'UnitDelete'])->name('unit.delete');
+});
+
+//Category all routes
+Route::middleware('auth')->group(function () {
+    Route::get('/category/all', [CategoryController::class, 'CategoryAll'])->name('category.all');
+    Route::get('/category/add', [CategoryController::class, 'CategoryAdd'])->name('category.add');
+    Route::post('/category/store', [CategoryController::class, 'CategoryStore'])->name('category.store');
+    Route::get('/category/edit/{id}', [CategoryController::class, 'CategoryEdit'])->name('category.edit');
+    Route::post('/category/update', [CategoryController::class, 'CategoryUpdate'])->name('category.update');
+    Route::get('/category/delete/{id}', [CategoryController::class, 'CategoryDelete'])->name('category.delete');
 });
 
 require __DIR__.'/auth.php';
