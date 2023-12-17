@@ -61,6 +61,7 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('purchase.all')}}">Satın Alımlar</a></li>
+                        <li><a href="{{ route('purchase.pending')}}">Onay Bekleyen Satın Alımlar</a></li>
                     </ul>
                 </li>
                 <li class="menu-title">Pages</li>

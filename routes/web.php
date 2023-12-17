@@ -100,6 +100,10 @@ Route::middleware('auth')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::get('/purchase/all', [PurchaseController::class, 'PurchaseAll'])->name('purchase.all');
     Route::get('/purchase/add', [PurchaseController::class, 'PurchaseAdd'])->name('purchase.add');
+    Route::post('/purchase/store', [PurchaseController::class, 'PurchaseStore'])->name('purchase.store');
+    Route::get('/purchase/delete/{id}', [PurchaseController::class, 'PurchaseDelete'])->name('purchase.delete');
+    Route::get('/purchase/pending', [PurchaseController::class, 'PurchasePending'])->name('purchase.pending');
+    Route::get('/purchase/approve/{id}', [PurchaseController::class, 'PurchaseApprove'])->name('purchase.approve');
 });
 
 //Default all routes

@@ -58,7 +58,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <form method="" action="">
+                        <form method="POST" action="{{ route('purchase.store')}}">
                             @csrf
                             <table class="table table-sm table-bordered" width="100%">
                                 <thead>
@@ -66,7 +66,7 @@
                                         <th>Kategori</th>
                                         <th>Ürün</th>
                                         <th>Adet</th>
-                                        <th>Ürün Fiyatı</th>
+                                        <th>Ürün Birim Fiyatı</th>
                                         <th>Açıklama</th>
                                         <th>Toplam Fiyat</th>
                                         <th>İşlem</th>

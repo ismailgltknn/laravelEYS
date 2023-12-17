@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('category_id');
             $table->integer('product_id');
             $table->string('purchase_no');
-            $table->date('date');
+            $table->dateTime('date');
             $table->string('description')->nullable();
             $table->double('buying_quantity');
             $table->double('unit_price');

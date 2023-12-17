@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0">Satın Alımlar</h4>
+                    <h4 class="mb-sm-0">Satın Alım Onay</h4>
                 </div>
             </div>
         </div>
@@ -13,8 +13,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <a href="{{ route('purchase.add')}}" class="btn btn-success waves-effect waves-light" style="float:right;"><i class="fas fa-plus me-2"></i>Satın Alım Ekle </a>
-                        <h4 class="card-title mb-4 p-2">Satın Alım Bilgileri </h4>
+                        <h4 class="card-title mb-4 p-2">Satın Alım Onayları </h4>
                         <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                             <thead>
                                 <tr>
@@ -26,7 +25,7 @@
                                     <th>Miktar</th> 
                                     <th>Ürün Adı</th>
                                     <th>Durum</th>
-                                    <th style="{{!$allStatusControl ? 'visibility: hidden;' : '' }}">İşlem</th>
+                                    <th>İşlem</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -48,7 +47,7 @@
                                     </td> 
                                     <td>
                                         @if($item->status == '0')
-                                        <a href="{{ route('purchase.delete', $item->id) }}" class="btn btn-sm btn-danger" title="Sil" id="deleteBtn"><i class="fas fa-trash-alt"></i>  Sil</a>
+                                        <a href="{{ route('purchase.approve', $item->id) }}" class="btn btn-success btn-sm" title="Onayla" id="approveBtn"><i class=" fas fa-check-circle"></i>  Onayla</a>
                                         @endif
                                     </td>
                                 </tr>

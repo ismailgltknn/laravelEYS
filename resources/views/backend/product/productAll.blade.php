@@ -14,7 +14,7 @@
                 <div class="card">
                     <div class="card-body">
                         <a href="{{ route('product.add')}}" class="btn btn-success waves-effect waves-light" style="float:right;"><i class="fas fa-plus me-2"></i>Ürün Ekle </a>
-                        <h4 class="card-title">Tüm Ürün Bilgileri </h4>
+                        <h4 class="card-title mb-4 p-2">Tüm Ürün Bilgileri </h4>
                         <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                             <thead>
                                 <tr>
@@ -36,7 +36,7 @@
                                     <td> {{ $item->category->name }} </td> 
                                     <td>
                                         <a href="javascript:void(0);" class="productEdit" type="button" data-id="{{ $item->id}}" title="Düzenle"><i class="fas fa-edit"></i></a>
-                                        <a href="{{ route('product.delete', $item->id) }}" class="" title="Sil" id="delete"><i class="text-danger fas fa-trash-alt"></i></a>
+                                        <a href="{{ route('product.delete', $item->id) }}" class="" title="Sil" id="deleteBtn"><i class="text-danger fas fa-trash-alt"></i></a>
                                     </td>
                                 </tr>
                                 @endforeach
