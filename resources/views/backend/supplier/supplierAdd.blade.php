@@ -6,35 +6,35 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Müşteri Ekle</h4>
+                        <h4 class="card-title">Tedarikçi Ekle</h4>
                         <form method="POST" id="supplierAdd" action="{{ route('supplier.store')}}" class="p-3">
                             @csrf
                             <div class="row mb-3">
-                                <label for="supplierName" class="col-sm-2 col-form-label">Müşteri Adı: </label>
+                                <label for="supplierName" class="col-sm-2 col-form-label">Tedarikçi Adı: </label>
                                 <div class="form-group col-sm-10">
                                     <input name="supplierName" id="supplierName" required class="form-control" type="text">
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="supplierPhone" class="col-sm-2 col-form-label">Müşteri Tel. No.: </label>
+                                <label for="supplierPhone" class="col-sm-2 col-form-label">Tedarikçi Tel. No.: </label>
                                 <div class="form-group col-sm-10">
                                     <input name="supplierPhone" id="supplierPhone" required class="form-control" type="tel" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" placeholder="5555555555">
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="supplierEmail" class="col-sm-2 col-form-label">Müşteri Email: </label>
+                                <label for="supplierEmail" class="col-sm-2 col-form-label">Tedarikçi Email: </label>
                                 <div class="form-group col-sm-10">
                                     <input name="supplierEmail" id="supplierEmail" required class="form-control" type="email">
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="supplierAddress" class="col-sm-2 col-form-label">Müşteri Adres: </label>
+                                <label for="supplierAddress" class="col-sm-2 col-form-label">Tedarikçi Adres: </label>
                                 <div class="form-group col-sm-10">
                                     <input name="supplierAddress" id="supplierAddress" required class="form-control" type="text">
                                 </div>
                             </div>
                             <div class="mx-auto">
-                                <input type="submit" class="btn btn-info waves-effect waves-light" value="Müşteri Ekle">
+                                <input type="submit" class="btn btn-info waves-effect waves-light" value="Tedarikçi Ekle">
                             </div>
                         </form>
                     </div>
@@ -63,16 +63,16 @@
             },
             messages :{
                 supplierName: {
-                    required : 'Lütfen Müşteri Adı Giriniz.',
+                    required : 'Lütfen Tedarikçi Adı Giriniz.',
                 },
                 supplierPhone: {
-                    required : 'Lütfen Müşteri Tel. No. Giriniz.',
+                    required : 'Lütfen Tedarikçi Tel. No. Giriniz.',
                 },
                 supplierEmail: {
-                    required : 'Lütfen Müşteri Email Giriniz.',
+                    required : 'Lütfen Tedarikçi Email Giriniz.',
                 },
                 supplierAddress: {
-                    required : 'Lütfen Müşteri Adresi Giriniz.',
+                    required : 'Lütfen Tedarikçi Adresi Giriniz.',
                 },
             },
             errorElement : 'span', 
