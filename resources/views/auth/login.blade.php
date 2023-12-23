@@ -37,7 +37,11 @@
                     </div>
                     
                     <h4 class="text-muted text-center font-size-18"><b>Giriş Yap</b></h4>
-                    
+                    @if(count($errors))
+                            @foreach ($errors->all() as $error)
+                                <p class="alert alert-danger alert-dismissible fade show">{{ $error }}</p>
+                            @endforeach
+                    @endif
                     <div class="p-3">
                         <form class="form-horizontal mt-3" method="POST" action="{{ route('login') }}">
                             @csrf
@@ -95,7 +99,7 @@
     <script>
         @if(Session::has('message'))
         var type = "{{ Session::get('alert-type','info') }}"
-        switch(type){
+        switch(type){ 
             case 'info':
             toastr.info(" {{ Session::get('message') }} ");
             break;
