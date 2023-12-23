@@ -39,3 +39,9 @@
 
 > ### ***İsmail Gültekin - Web Developer*** <br><hr>
 > *Laravel 10.10 - Php 8.3.0 - MySQL 8.2.0 - Node JS v18.16.1*
+
+###### Gerekli Eklentiler
+<hr>
+
+1. Php - gd extension
+1. 

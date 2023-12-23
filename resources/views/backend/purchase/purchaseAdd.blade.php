@@ -6,12 +6,17 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Satın Alım Ekle</h4>
+                        <h4 class="card-title">Satın Alma</h4>
                         <div class="row mt-4">
                             <div class="col-md-4">
                                 <div class="col-md-6 ms-auto">
                                     <label for="date" class="form-label">Tarih: </label>
-                                    <input class="form-control dateInput" type="date" name="date" id="date">
+                                    <div class="input-group" id="datepicker2">
+                                        <input type="text" name="date" id="date" class="form-control dateInput" placeholder="Gün Ay Yıl"
+                                        data-date-format="dd MM yyyy" data-date-container='#datepicker2' data-provide="datepicker"
+                                        data-date-autoclose="true">
+                                        <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -23,7 +28,7 @@
                             <div class="col-md-4">
                                 <div class="col-md-6">
                                     <label for="supplier_id" class="form-label">Tedarikçi: </label>
-                                    <select class="form-select" id="supplier_id" name="supplier_id" aria-label="Tedarikçi Adı">
+                                    <select class="form-control select2" id="supplier_id" name="supplier_id" aria-label="Tedarikçi Adı">
                                         <option>Tedarikçi seçiniz.</option>
                                         @foreach($suppliers as $sup)
                                         <option value="{{ $sup->id}}">{{ $sup->name}}</option>
@@ -37,7 +42,7 @@
                             <div class="col-md-4">
                                 <div class="col-md-6 ms-auto">
                                     <label for="category_id" class="form-label">Kategori: </label>
-                                    <select class="form-select" id="category_id" name="category_id" aria-label="Kategori Adı">
+                                    <select class="form-control select2" id="category_id" name="category_id" aria-label="Kategori Adı">
                                         <option>Kategori seçiniz.</option>
                                     </select>
                                 </div>
@@ -45,14 +50,14 @@
                             <div class="col-md-4">
                                 <div class="">
                                     <label for="product_id" class="form-label">Ürün: </label>
-                                    <select class="form-select" id="product_id" name="product_id" aria-label="Ürün Adı">
+                                    <select class="form-control select2" id="product_id" name="product_id" aria-label="Ürün Adı">
                                         <option>Ürün seçiniz.</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="mt-4 p-2 ms-auto">
-                                    <i class="btn btn-outline-secondary waves-effect waves-light addEventMore fas fa-plus"><span class="ms-2">Ekle</span></i>
+                                    <i class="btn btn-outline-success waves-effect waves-light addEventMore fas fa-plus"><span class="ms-2">Ekle</span></i>
                                 </div>
                             </div>
                         </div>
@@ -85,7 +90,7 @@
                                 </tbody>
                             </table>
                             <div class="form-group">
-                                <button type="submit" class="btn btn-info" id="storeButton">Satın Alım Kaydet</button>
+                                <button type="submit" class="btn btn-success" id="storeButton">Kaydet</button>
                             </div>
                         </form>
                     </div>
@@ -127,7 +132,7 @@
     </tr>
 </script>
 <script type="text/javascript">
-    $(function () {
+    $(document).ready(function () {
         $(document).on('change', '#supplier_id', function () {
             var supplierId = $(this).val();
             axios.get('/get/category/'+ supplierId)
@@ -188,7 +193,7 @@
                 $.notify("Ürün Seçimi Yapmadınız.", {globalPosition: 'top right', className: 'error'});    
                 return false;      
             }
-
+            
             var source = $("#document-template").html();
             var template = Handlebars.compile(source);
             var data = {
@@ -203,12 +208,12 @@
             var html = template(data);
             $('#addRow').append(html);
         });
-
+        
         $(document).on('click', '.removeEventMore', function (event) {
             $(this).closest('.deleteAddMoreItem').remove();
             totalAmountPrice();
         });
-
+        
         $(document).on('keyup click', '.unit_price,.buying_quantity', function () {
             var unitPrice = $(this).closest("tr").find("input.unit_price").val();
             var quantity = $(this).closest("tr").find("input.buying_quantity").val();

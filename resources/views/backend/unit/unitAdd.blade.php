@@ -16,7 +16,7 @@
                                 </div>
                             </div>
                             <div class="mx-auto">
-                                <input type="submit" class="btn btn-info waves-effect waves-light" value="Birim Ekle">
+                                <input type="submit" class="btn btn-success waves-effect waves-light" value="Birim Ekle">
                             </div>
                         </form>
                     </div>

@@ -18,7 +18,7 @@
                             <div class="row mb-3">
                                 <label for="" class="col-sm-2 col-form-label">Tedarikçi: </label>
                                 <div class="form-group col-sm-10">
-                                    <select class="form-select" name="supplier_id" aria-label="Tedarikçi Adı">
+                                    <select class="form-control select2" name="supplier_id" aria-label="Tedarikçi Adı">
                                         <option>Tedarikçi seçiniz.</option>
                                         @foreach($suppliers as $sup)
                                         <option value="{{ $sup->id}}">{{ $sup->name}}</option>
@@ -29,7 +29,7 @@
                             <div class="row mb-3">
                                 <label for="" class="col-sm-2 col-form-label">Birim: </label>
                                 <div class="form-group col-sm-10">
-                                    <select class="form-select" name="unit_id" aria-label="Tedarikçi Adı">
+                                    <select class="form-control select2" name="unit_id" aria-label="Tedarikçi Adı">
                                         <option>Birim seçiniz.</option>
                                         @foreach($units as $unit)
                                         <option value="{{ $unit->id}}">{{ $unit->name}}</option>
@@ -40,7 +40,7 @@
                             <div class="row mb-3">
                                 <label for="" class="col-sm-2 col-form-label">Kategori: </label>
                                 <div class="form-group col-sm-10">
-                                    <select class="form-select" name="category_id" aria-label="Tedarikçi Adı">
+                                    <select class="form-control select2" name="category_id" aria-label="Tedarikçi Adı">
                                         <option>Kategori seçiniz.</option>
                                         @foreach($categories as $category)
                                         <option value="{{ $category->id}}">{{ $category->name}}</option>
@@ -49,7 +49,7 @@
                                 </div>
                             </div>
                             <div class="mx-auto">
-                                <input type="submit" class="btn btn-info waves-effect waves-light" value="Ürün Ekle">
+                                <input type="submit" class="btn btn-success waves-effect waves-light" value="Ürün Ekle">
                             </div>
                         </form>
                     </div>

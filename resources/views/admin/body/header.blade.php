@@ -3,21 +3,12 @@
         <div class="d-flex">
             <!-- LOGO -->
             <div class="navbar-brand-box">
-                <a href="index.html" class="logo logo-dark">
+                <a href="{{ route('dashboard')}}" class="logo">
                     <span class="logo-sm">
-                        <img src="/backend/assets/images/logo-sm.png" alt="logo-sm" height="22">
+                        <img src="/logo/logo-trs-white.png" alt="logo-sm" width="50px" height="50px">
                     </span>
                     <span class="logo-lg">
-                        <img src="/backend/assets/images/logo-dark.png" alt="logo-dark" height="20">
-                    </span>
-                </a>
-                
-                <a href="index.html" class="logo logo-light">
-                    <span class="logo-sm">
-                        <img src="/backend/assets/images/logo-sm.png" alt="logo-sm-light" height="22">
-                    </span>
-                    <span class="logo-lg">
-                        <img src="/backend/assets/images/logo-light.png" alt="logo-light" height="20">
+                        <img src="/logo/logo-trs-white.png" alt="logo-dark" width="100px" height="50px">
                     </span>
                 </a>
             </div>
@@ -29,7 +20,7 @@
             <!-- App Search-->
             <form class="app-search d-none d-lg-block">
                 <div class="position-relative">
-                    <input type="text" class="form-control" placeholder="Search...">
+                    <input type="text" class="form-control" placeholder="Arama...">
                     <span class="ri-search-line"></span>
                 </div>
             </form>
@@ -65,7 +56,7 @@
                     <a class="dropdown-item d-block" href="#"><span class="badge bg-success float-end mt-1">11</span><i class="ri-settings-2-line align-middle me-1"></i> Settings</a>
                     <a class="dropdown-item" href="#"><i class="ri-lock-unlock-line align-middle me-1"></i> Lock screen</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item text-danger" href="{{ route('admin.logout')}}"><i class="ri-shut-down-line align-middle me-1 text-danger"></i> Logout</a>
+                    <a class="dropdown-item text-danger" href="{{ route('admin.logout')}}"><i class="ri-shut-down-line align-middle me-1 text-danger"></i> Çıkış</a>
                 </div>
             </div>
             

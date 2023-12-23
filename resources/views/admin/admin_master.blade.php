@@ -8,6 +8,11 @@
     <meta content="Management System" name="author" />
     <!-- App favicon -->
     <link rel="shortcut icon" href="/backend/assets/images/favicon.ico">
+    <!-- For Form Advanced js -->
+    <link href="/backend/assets/libs/spectrum-colorpicker2/spectrum.min.css" rel="stylesheet" type="text/css">
+    <link href="/backend/assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet">
+    <!-- Select2 Css-->
+    <link href="/backend/assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css">
     <!-- jquery.vectormap css -->
     <link href="/backend/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
     <!-- DataTables -->
@@ -22,6 +27,8 @@
     <link href="/backend/assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
     <!-- Toastr Css-->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
+    <!-- Datepicker Css-->
+    <link href="/backend/assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
     
 </head>
 <body data-topbar="dark">

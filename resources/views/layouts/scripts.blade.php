@@ -4,6 +4,10 @@
 <script src="/backend/assets/libs/metismenu/metisMenu.min.js"></script>
 <script src="/backend/assets/libs/simplebar/simplebar.min.js"></script>
 <script src="/backend/assets/libs/node-waves/waves.min.js"></script>
+<!-- For Form Advanced js -->
+<script src="/backend/assets/libs/spectrum-colorpicker2/spectrum.min.js"></script>
+<script src="/backend/assets/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+<script src="/backend/assets/libs/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
 <!-- jquery.vectormap map -->
 <script src="/backend/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js"></script>
 <script src="/backend/assets/libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-us-merc-en.js"></script> 
@@ -48,4 +52,10 @@
 <script src="/backend/assets/js/handlebar.js"></script>
 <!-- Notify js -->
 <script src="/backend/assets/js/notify.min.js"></script>
+<!-- Select2 js -->
+<script src="/backend/assets/libs/select2/js/select2.min.js"></script>
+<!-- Form Advanced js -->
+<script src="/backend/assets/js/pages/form-advanced.init.js"></script>
+<!-- Datepicker js -->
+<script src="/backend/assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
 @stack('script')
