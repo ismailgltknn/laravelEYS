@@ -61,7 +61,19 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('purchase.all')}}">Satın Alma</a></li>
-                        <li><a href="{{ route('purchase.pending')}}">Satın Alma Onayı</a></li>
+                        <li><a href="{{ route('purchase.pending')}}">Satın Alma Onay</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Fatura Yönetimi</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('invoice.all')}}">Fatura Listesi</a></li>
+                        <li><a href="{{ route('invoice.pending.list')}}">Fatura Onay</a></li>
+                        <li><a href="{{ route('print.invoice.list')}}">Fatura Listesi Çıktı</a></li>
+                        <li><a href="{{ route('daily.invoice.report')}}">Günlük Fatura Raporu</a></li>
                     </ul>
                 </li>
                 <li class="menu-title">Pages</li>

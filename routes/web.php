@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Pos\CategoryController;
 use App\Http\Controllers\Pos\CustomerController;
 use App\Http\Controllers\Pos\DefaultController;
+use App\Http\Controllers\Pos\InvoiceController;
 use App\Http\Controllers\Pos\ProductController;
 use App\Http\Controllers\Pos\PurchaseController;
 use App\Http\Controllers\Pos\SupplierController;
@@ -106,10 +107,26 @@ Route::middleware('auth')->group(function () {
     Route::get('/purchase/approve/{id}', [PurchaseController::class, 'PurchaseApprove'])->name('purchase.approve');
 });
 
+//Invoice all routes
+Route::middleware('auth')->group(function () {
+    Route::get('/invoice/all', [InvoiceController::class, 'InvoiceAll'])->name('invoice.all');
+    Route::get('/invoice/add', [InvoiceController::class, 'InvoiceAdd'])->name('invoice.add');
+    Route::post('/invoice/store', [InvoiceController::class, 'InvoiceStore'])->name('invoice.store');
+    Route::get('/invoice/pending/list', [InvoiceController::class, 'InvoicePendingList'])->name('invoice.pending.list');
+    Route::get('/invoice/delete/{id}', [InvoiceController::class, 'InvoiceDelete'])->name('invoice.delete');
+    Route::get('/invoice/approve/{id}', [InvoiceController::class, 'InvoiceApprove'])->name('invoice.approve');
+    Route::post('/approval/store/{id}', [InvoiceController::class, 'ApprovalStore'])->name('approval.store');
+    Route::get('/print/invoice/list', [InvoiceController::class, 'PrintInvoiceList'])->name('print.invoice.list');
+    Route::get('/print/invoice/{id}', [InvoiceController::class, 'PrintInvoice'])->name('print.invoice');
+    Route::get('/daily/invoice/report', [InvoiceController::class, 'DailyInvoiceReport'])->name('daily.invoice.report');
+    Route::get('/daily/invoice/pdf', [InvoiceController::class, 'DailyInvoicePdf'])->name('daily.invoice.pdf');
+});
+
 //Default all routes
 Route::middleware('auth')->group(function () {
     Route::get('/get/category/{supplierId}', [DefaultController::class, 'getCategory'])->name('get.category');
     Route::get('/get/product/{categoryId}', [DefaultController::class, 'getProduct'])->name('get.product');
+    Route::get('/get/productStock/{productId}', [DefaultController::class, 'getProductStock'])->name('get.productStock');
 });
 
 require __DIR__.'/auth.php';

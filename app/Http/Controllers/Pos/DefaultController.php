@@ -29,4 +29,10 @@ class DefaultController extends Controller
 
         return response()->json($getAllProducts);
     }
+    
+    public function getProductStock($productId){
+        $getProductStock = Product::where('id', $productId)->first()->quantity;//Ürünün stok sayısını getir
+
+        return response()->json($getProductStock);
+    }
 }
