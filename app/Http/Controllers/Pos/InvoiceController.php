@@ -77,7 +77,7 @@ class InvoiceController extends Controller
                             $invoice_detail->selling_quantity = $request->selling_quantity[$i];
                             $invoice_detail->unit_price = $request->unit_price[$i];
                             $invoice_detail->selling_price = $request->selling_price[$i];
-                            $invoice_detail->status = "1";
+                            $invoice_detail->status = "0";
                             $invoice_detail->save();
                         }
                         if ($request->customer_id == '0') {
@@ -175,6 +175,8 @@ class InvoiceController extends Controller
         DB::transaction(function() use($request, $invoice, $id){
             foreach ($request->selling_quantity as $key => $val) {
                 $invoiceDetails = InvoiceDetail::where('id', $key)->first();
+                $invoiceDetails->status = '1';
+                $invoiceDetails->save();
                 $product = Product::where('id', $invoiceDetails->product_id)->first();
                 $product->quantity = ((float)$product->quantity) - ((float)$request->selling_quantity[$key]);
                 $product->save();

@@ -11,6 +11,7 @@ use App\Http\Controllers\Pos\ProductController;
 use App\Http\Controllers\Pos\PurchaseController;
 use App\Http\Controllers\Pos\SupplierController;
 use App\Http\Controllers\Pos\UnitController;
+use App\Http\Controllers\Pos\StockController;
 
 /*
 |--------------------------------------------------------------------------
@@ -120,6 +121,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/print/invoice/{id}', [InvoiceController::class, 'PrintInvoice'])->name('print.invoice');
     Route::get('/daily/invoice/report', [InvoiceController::class, 'DailyInvoiceReport'])->name('daily.invoice.report');
     Route::get('/daily/invoice/pdf', [InvoiceController::class, 'DailyInvoicePdf'])->name('daily.invoice.pdf');
+});
+
+//Stock all routes
+Route::middleware('auth')->group(function () {
+    Route::get('/stock/report', [StockController::class, 'StockReport'])->name('stock.report');
+    Route::get('/stock/report/pdf', [StockController::class, 'StockReportPdf'])->name('stock.report.pdf');
+    Route::get('/stock/supplier/wise', [StockController::class, 'StockSupplierWise'])->name('stock.supplier.wise');
+    Route::get('/supplier/wise/pdf', [StockController::class, 'SupplierWisePdf'])->name('supplier.wise.pdf');
+    Route::get('/product/wise/pdf', [StockController::class, 'ProductWisePdf'])->name('product.wise.pdf');
 });
 
 //Default all routes
