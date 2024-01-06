@@ -11,7 +11,7 @@
                 </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="fas fa-paper-plane"></i>
+                        <i class="ri-hotel-fill"></i>
                         <span>Tedarik Yönetimi</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -20,18 +20,19 @@
                 </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="fas fa-users"></i>
+                        <i class="ri-shield-user-fill"></i>
                         <span>Müşteri Yönetimi</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('customer.all')}}">Müşteriler</a></li>
                         <li><a href="{{ route('credit.customer')}}">Müşteri Kredi</a></li>
                         <li><a href="{{ route('paid.customer')}}">Müşteri Ödeme</a></li>
+                        <li><a href="{{ route('customer.wise.report')}}">Kredi / Ödeme Bazlı Rapor</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="fas fa-briefcase"></i>
+                        <i class="ri-delete-back-fill"></i>
                         <span>Birim Yönetimi</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -40,7 +41,7 @@
                 </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="fas fa-list"></i>
+                        <i class="ri-apps-2-fill"></i>
                         <span>Kategori Yönetimi</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -49,7 +50,7 @@
                 </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="fas fa-box"></i>
+                        <i class="ri-file-list-fill"></i>
                         <span>Ürün Yönetimi</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -58,7 +59,7 @@
                 </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="fas fa-shopping-cart"></i>
+                        <i class="ri-compass-2-fill"></i>
                         <span>Satın Alma Yönetimi</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -69,7 +70,7 @@
                 </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="fas fa-shopping-cart"></i>
+                        <i class="ri-article-fill"></i>
                         <span>Fatura Yönetimi</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -82,7 +83,7 @@
                 <li class="menu-title">Stok</li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-account-circle-line"></i>
+                        <i class="ri-archive-fill"></i>
                         <span>Stok Yönetimi</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
@@ -93,15 +94,10 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-profile-line"></i>
-                        <span>Utility</span>
+                        <span>Destek</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="pages-starter.html">Starter Page</a></li>
-                        <li><a href="pages-timeline.html">Timeline</a></li>
-                        <li><a href="pages-directory.html">Directory</a></li>
-                        <li><a href="pages-invoice.html">Invoice</a></li>
-                        <li><a href="pages-404.html">Error 404</a></li>
-                        <li><a href="pages-500.html">Error 500</a></li>
+                        <li><a href="#">Coming Soon...</a></li>
                     </ul>
                 </li>
             </ul>
