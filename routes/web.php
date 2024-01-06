@@ -64,6 +64,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/customer/delete/{id}', [CustomerController::class, 'CustomerDelete'])->name('customer.delete');
     Route::get('/credit/customer', [CustomerController::class, 'CreditCustomer'])->name('credit.customer');
     Route::get('/credit/customer/print/pdf', [CustomerController::class, 'CreditCustomerPrintPdf'])->name('credit.customer.print.pdf');
+    Route::get('/customer/edit/invoice/{id}', [CustomerController::class, 'CustomerEditInvoice'])->name('customer.edit.invoice');
+    Route::post('/customer/update/invoice/{id}', [CustomerController::class, 'CustomerUpdateInvoice'])->name('customer.update.invoice');
     
     //Units all routes
     Route::get('/unit/all', [UnitController::class, 'UnitAll'])->name('unit.all');

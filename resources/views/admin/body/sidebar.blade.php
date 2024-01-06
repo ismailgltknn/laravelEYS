@@ -25,7 +25,7 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('customer.all')}}">Müşteriler</a></li>
-                        <li><a href="{{ route('credit.customer')}}">Müşteri Bakiye</a></li>
+                        <li><a href="{{ route('credit.customer')}}">Müşteri Kredi</a></li>
                     </ul>
                 </li>
                 <li>
