@@ -10,7 +10,8 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
-use Intervention\Image\ImageManagerStatic as Image;
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 class CustomerController extends Controller
 {
@@ -30,7 +31,9 @@ class CustomerController extends Controller
             $image = $request->file('customerImage');
             if ($image) {
                 $generatedName = hexdec(uniqid()). '.' . $image->getClientOriginalExtension(); //465645.png
-                Image::make($image)->resize(200,200)->save('files/customerImages/' . $generatedName);
+                $manager = new ImageManager(new Driver());
+                $img = $manager->read($image);
+                $img->resize(200,200)->save('files/customerImages/' . $generatedName);
                 $saveUrl = 'files/customerImages/' . $generatedName;
             }
             else{
@@ -77,7 +80,9 @@ class CustomerController extends Controller
         $image = $request->file('customerImage');
         if ($image) {
             $generatedName = hexdec(uniqid()). '.' . $image->getClientOriginalExtension(); //465645.png
-            Image::make($image)->resize(200,200)->save('files/customerImages/' . $generatedName);
+            $manager = new ImageManager(new Driver());
+            $img = $manager->read($image);
+            $img->resize(200,200)->save('files/customerImages/' . $generatedName);
             $saveUrl = 'files/customerImages/' . $generatedName;
         }
         else{
