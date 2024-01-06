@@ -174,4 +174,9 @@ class CustomerController extends Controller
             return redirect()->back()->with($notification);
         }
     }
+
+    public function CustomerInvoiceDetails($invoiceId){
+        $payment = Payment::where('invoice_id', $invoiceId)->first();
+        return view('backend.pdf.invoiceDetailsPdf', compact('payment'));
+    }
 }
