@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Anasayfa | Envanter Yönetim Sistemi</title>
+    <title>Envanter Yönetim Sistemi</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Inventory Management System" name="description" />
     <meta content="Management System" name="author" />
