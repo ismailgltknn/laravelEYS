@@ -62,7 +62,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/customer/edit/{id}', [CustomerController::class, 'CustomerEdit'])->name('customer.edit');
     Route::post('/customer/update', [CustomerController::class, 'CustomerUpdate'])->name('customer.update');
     Route::get('/customer/delete/{id}', [CustomerController::class, 'CustomerDelete'])->name('customer.delete');
-    
+    Route::get('/credit/customer', [CustomerController::class, 'CreditCustomer'])->name('credit.customer');
+    Route::get('/credit/customer/print/pdf', [CustomerController::class, 'CreditCustomerPrintPdf'])->name('credit.customer.print.pdf');
     
     //Units all routes
     Route::get('/unit/all', [UnitController::class, 'UnitAll'])->name('unit.all');
@@ -128,7 +129,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/get/category/{supplierId}', [DefaultController::class, 'getCategory'])->name('get.category');
     Route::get('/get/product/{categoryId}', [DefaultController::class, 'getProduct'])->name('get.product');
     Route::get('/get/productStock/{productId}', [DefaultController::class, 'getProductStock'])->name('get.productStock');
-    
+
 });
 
 require __DIR__.'/auth.php';
