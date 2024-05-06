@@ -44,4 +44,3 @@
 <hr>
 
 1. Php - gd extension
-1. 
